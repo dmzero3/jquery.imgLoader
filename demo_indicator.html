@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>jquery.imgLoader</title>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="js/jquery.img-loader.js"></script>
+<script>
+    $(function(){
+        var queryString = '?' + new Date().getTime();
+        var imgArray = [
+            'img/01.jpg' + queryString,
+            'img/02.jpg' + queryString,
+            'img/03.jpg' + queryString,
+            'img/04.jpg' + queryString,
+            'img/05.jpg' + queryString,
+            'img/06.jpg' + queryString,
+            'img/07.jpg' + queryString,
+            'img/08.jpg' + queryString,
+            'img/09.jpg' + queryString,
+            'img/10.jpg' + queryString
+        ];
+        $('.img-wrapper').imgLoader({
+            'loadingType': 'indicator',
+            'imgType': 'append',
+            'imgSrcArray': imgArray,
+            'callback': function(){
+                //alert('do something!!');
+            }
+        });
+    });
+</script>
+<style>
+    .img-wrapper {
+        width: 300px;
+        height: 600px;
+        border: 1px solid #000;
+    }
+    .img-wrapper img {
+        width: 150px;
+        float: left;
+    }
+    
+</style>
+</head>
+<body>
+    <div class="js_loading"></div>
+    <div class="img-wrapper" style="display: none">
+        
+    </div>
+</body>
+</html>
